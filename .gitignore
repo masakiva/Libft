@@ -3,3 +3,4 @@ main_*
 .DS_Store
 *.o
 libft.a
+*.swp

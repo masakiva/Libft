@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 12:02:02 by mvidal-a          #+#    #+#              #
-#    Updated: 2019/11/14 18:25:09 by mvidal-a         ###   ########.fr        #
+#    Updated: 2019/11/14 18:42:40 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,11 +57,15 @@ SRCS_BONUS	= ft_lstnew_bonus.c\
 			  ft_lstiter_bonus.c\
 			  ft_lstmap_bonus.c
 
+SRCS_CUSTOM	= ft_putlnbr_fd.c
+
 CFLAGS		= -Wall -Wextra -Werror
 
 OBJS		= ${SRCS:.c=.o}
 
 OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
+
+OBJS_CUSTOM	= ${SRCS_CUSTOM:.c=.o}
 
 CC			= gcc
 RM			= rm -f
@@ -75,10 +79,13 @@ ${NAME}:	${OBJS}
 bonus:		${NAME} ${OBJS_BONUS}
 			ar rc ${NAME} ${OBJS_BONUS}
 
+custom:		${NAME} ${OBJS_CUSTOM}
+			ar rc ${NAME} ${OBJS_CUSTOM}
+
 all:		${NAME} bonus
 
 clean:
-			${RM} ${OBJS} ${OBJS_BONUS}
+			${RM} ${OBJS} ${OBJS_BONUS} ${OBJS_CUSTOM}
 
 fclean:		clean
 			${RM} ${NAME}
