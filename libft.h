@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:29:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/14 18:37:25 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/16 15:37:18 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 		void (*del)(void *));
 
 void	ft_putlnbr_fd(long n, int fd);
+void	ft_putlnbr_hex_fd(long n, char v, int fd);
 
 #endif

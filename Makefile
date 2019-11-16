@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 12:02:02 by mvidal-a          #+#    #+#              #
-#    Updated: 2019/11/14 18:42:40 by mvidal-a         ###   ########.fr        #
+#    Updated: 2019/11/15 12:12:11 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ SRCS_BONUS	= ft_lstnew_bonus.c\
 			  ft_lstiter_bonus.c\
 			  ft_lstmap_bonus.c
 
-SRCS_CUSTOM	= ft_putlnbr_fd.c
+SRCS_CUSTOM	= ft_putlnbr_fd.c\
+			  ft_putlnbr_hex_fd.c
 
 CFLAGS		= -Wall -Wextra -Werror
 
