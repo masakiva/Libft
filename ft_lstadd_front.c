@@ -6,14 +6,13 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:30:13 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/28 18:22:32 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/30 15:18:14 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
-	ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
 	if (new != NULL)
 	{

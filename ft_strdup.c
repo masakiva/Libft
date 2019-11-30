@@ -6,15 +6,14 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 18:33:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/28 18:29:45 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/30 12:56:46 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*
-	ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char			*dup;
 	size_t			len;

@@ -6,14 +6,13 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:47:09 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/28 18:24:26 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/30 15:19:41 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t
-	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_list *lst)
 {
 	size_t	size;
 

@@ -6,14 +6,13 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 17:02:10 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/28 18:22:46 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/30 15:18:25 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void
-	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
