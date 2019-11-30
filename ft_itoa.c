@@ -6,52 +6,57 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 12:58:23 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/08 19:11:11 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/29 19:06:34 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static char	*itoa_core(int n, int i, int nb2)
+size_t	n_len(int n)
 {
-	char	*nbr;
+	size_t	len;
 
-	if (!(nbr = (char *)malloc(sizeof(*nbr) * (i + 1))))
-		return (NULL);
-	nbr[i--] = 0;
-	if (n == 0)
-		nbr[i] = '0';
-	while (n)
+	len = 0;
+	if (n == -2147483648)
+		n++;
+	if (n <= 0)
 	{
-		nbr[i--] = (char)(n % 10 + 48);
+		n *= -1;
+		len++;
+	}
+	while (n > 0)
+	{
+		len++;
 		n /= 10;
 	}
-	if (nb2 < 0)
-		nbr[0] = '-';
-	if (nb2 == -2147483648)
-		nbr[10] = '8';
-	return (nbr);
+	return (len);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int		i;
-	int		nb;
-	int		nb2;
+	char		*nstr;
+	unsigned	un;
+	size_t		len;
 
-	nb = n;
-	nb2 = n;
-	i = 0;
-	if (nb <= 0)
-		i++;
-	if (nb == -2147483648)
-		n++;
-	if (nb < 0)
-		n *= -1;
-	while (nb)
+	len = n_len(n);
+	if (n < 0)
+		un = (unsigned)(n * -1);
+	else
+		un = (unsigned)n;
+	nstr = (char *)malloc(sizeof(char) * (len + 1));
+	if (nstr != NULL)
 	{
-		nb /= 10;
-		i++;
+		nstr[len--] = '\0';
+		if (n < 0)
+			nstr[0] = '-';
+		else if (n == 0)
+			nstr[0] = '0';
+		while (un > 0)
+		{
+			nstr[len--] = (char)(un % 10 + '0');
+			un /= 10;
+		}
 	}
-	return (itoa_core(n, i, nb2));
+	return (nstr);
 }

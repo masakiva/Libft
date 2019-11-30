@@ -6,15 +6,16 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:12:53 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/08 12:46:53 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:25:15 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void
+	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
+	char	digit;
 
 	if (n == -2147483648)
 	{
@@ -28,6 +29,6 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n > 9)
 		ft_putnbr_fd(n / 10, fd);
-	c = n % 10 + 48;
-	write(fd, &c, 1);
+	digit = n % 10 + '0';
+	write(fd, &digit, 1);
 }

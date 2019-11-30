@@ -6,16 +6,12 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 19:22:46 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/07 19:17:26 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:22:00 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isprint(int c)
+int
+	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	return (c >= 32 && c <= 126);
 }

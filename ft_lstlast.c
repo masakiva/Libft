@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 15:08:58 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/09 14:10:56 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/28 18:28:37 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*
+	ft_lstlast(t_list *lst)
 {
-	while (lst && lst->next)
+	while (lst != NULL && lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }

@@ -6,11 +6,12 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:40:30 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/10 17:41:35 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/29 17:00:58 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	trim_count(const char *s1, const char *set, int s1len, int inc_dec)
 {

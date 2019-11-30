@@ -6,37 +6,37 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 20:53:39 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/11 13:48:03 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/29 16:55:01 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*
+	ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*ns;
+	char			*sub;
+	size_t			slen;
+	size_t			sublen;
 	unsigned long	i;
-	unsigned long	l;
 
-	if (!s)
-		return (NULL);
-	if (len <= (l = ft_strlen(s)) - start)
+	slen = ft_strlen(s);
+	sublen = len;
+	if (start > slen)
+		sublen = 0;
+	else if (len + start > slen)
+		sublen = slen - start;
+	sub = (char *)malloc(sizeof(char) * (sublen + 1));
+	if (sub != NULL)
 	{
-		if (!(ns = (char *)malloc(sizeof(*ns) * (len + 1))))
-			return (NULL);
+		sub[sublen] = '\0';
+		i = 0;
+		while (i < sublen)
+		{
+			sub[i] = s[i + start];
+			i++;
+		}
 	}
-	else
-	{
-		if (!(ns = (char *)malloc(sizeof(*ns)
-						* (l - start >= 0 ? l - start + 1 : 1))))
-			return (NULL);
-	}
-	i = 0;
-	while (i < len && i + start < l)
-	{
-		ns[i] = s[i + start];
-		i++;
-	}
-	ns[i] = 0;
-	return (ns);
+	return (sub);
 }

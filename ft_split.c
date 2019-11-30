@@ -6,11 +6,12 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 19:25:31 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/11 14:02:59 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2019/11/29 18:54:46 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	wordlen(const char *s, int i, char c)
 {

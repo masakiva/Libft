@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 12:02:02 by mvidal-a          #+#    #+#              #
-#    Updated: 2019/11/15 12:12:11 by mvidal-a         ###   ########.fr        #
+#    Updated: 2019/11/28 17:56:32 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,15 +47,15 @@ SRCS		= ft_memset.c\
 			  ft_putendl_fd.c\
 			  ft_putnbr_fd.c
 
-SRCS_BONUS	= ft_lstnew_bonus.c\
-			  ft_lstadd_front_bonus.c\
-			  ft_lstsize_bonus.c\
-			  ft_lstlast_bonus.c\
-			  ft_lstadd_back_bonus.c\
-			  ft_lstdelone_bonus.c\
-			  ft_lstclear_bonus.c\
-			  ft_lstiter_bonus.c\
-			  ft_lstmap_bonus.c
+SRCS_BONUS	= ft_lstnew.c\
+			  ft_lstadd_front.c\
+			  ft_lstsize.c\
+			  ft_lstlast.c\
+			  ft_lstadd_back.c\
+			  ft_lstdelone.c\
+			  ft_lstclear.c\
+			  ft_lstiter.c\
+			  ft_lstmap.c
 
 SRCS_CUSTOM	= ft_putlnbr_fd.c\
 			  ft_putlnbr_hex_fd.c
