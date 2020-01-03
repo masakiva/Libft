@@ -2,5 +2,6 @@ a.out*
 main_*
 .DS_Store
 *.o
+objects
 libft.a
 *.swp

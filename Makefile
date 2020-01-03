@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2019/12/23 13:33:35 by mvidal-a         ###   ########.fr        #
+#    Updated: 2020/01/03 18:55:53 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,17 +61,21 @@ SRCS_CUSTOM	+= ft_uitoa.c
 SRCS_CUSTOM	+= ft_uitoa_hex.c
 SRCS_CUSTOM	+= ft_ulitoa_hex.c
 
-OBJS		= ${SRCS:.c=.o}
+VPATH		= part_1:part_2:bonus:custom
 
-OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
+OBJDIR		= objects
 
-OBJS_CUSTOM	= ${SRCS_CUSTOM:.c=.o}
+OBJS		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+
+OBJS_BONUS	= $(addprefix $(OBJDIR)/, $(SRCS_BONUS:.c=.o))
+
+OBJS_CUSTOM	= $(addprefix $(OBJDIR)/, $(SRCS_CUSTOM:.c=.o))
 
 NAME		= libft.a
 
 INCLUDES	= ./
 
-HEADER		= ${INCLUDES}libft.h
+HEADER		= $(INCLUDES)libft.h
 
 CC			= clang
 
@@ -79,34 +83,31 @@ CFLAGS		+= -Wall
 CFLAGS		+= -Wextra
 CFLAGS		+= -Werror
 
-all:			${NAME}
+all:			$(NAME)
 
-${NAME}:		${OBJS}
+$(NAME):		$(OBJS)
 				ar rcs $@ $^
-# printf "\033[32m$@ is ready ! \n\033[0m"
 
-bonus:			${OBJS} ${OBJS_BONUS}
-				ar rcs ${NAME} $^
+bonus:			$(OBJS) $(OBJS_BONUS)
+				ar rcs $(NAME) $^
 
-custom:			${OBJS} ${OBJS_CUSTOM}
-				ar rcs ${NAME} $^
+custom:			$(OBJS) $(OBJS_CUSTOM)
+				ar rcs $(NAME) $^
 
-${OBJS}:		%.o: %.c ${HEADER}
-				${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@
+$(OBJDIR):
+				mkdir $(OBJDIR)
 
-${OBJS_BONUS}:	%.o: %.c ${HEADER}
-				${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@
+$(OBJDIR)/%.o:	%.c
+				$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
-${OBJS_CUSTOM}:	%.o: %.c ${HEADER}
-				${CC} ${CFLAGS} -I ${INCLUDES} -c $< -o $@
+$(OBJS):		$(HEADER) | $(OBJDIR)
 
 clean:
-				${RM} ${OBJS} ${OBJS_BONUS} ${OBJS_CUSTOM}
+				$(RM) -r $(OBJDIR)
 
 fclean:			clean
-				${RM} ${NAME}
+				$(RM) $(NAME)
 
 re:				fclean all
 
-.PHONY:			all clean fclean re bonus
-# .SILENT:
+.PHONY:			all clean fclean re
