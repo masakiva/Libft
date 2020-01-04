@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2020/01/03 18:55:53 by mvidal-a         ###   ########.fr        #
+#    Updated: 2020/01/03 20:14:09 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,13 +63,13 @@ SRCS_CUSTOM	+= ft_ulitoa_hex.c
 
 VPATH		= part_1:part_2:bonus:custom
 
-OBJDIR		= objects
-
 OBJS		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 OBJS_BONUS	= $(addprefix $(OBJDIR)/, $(SRCS_BONUS:.c=.o))
 
 OBJS_CUSTOM	= $(addprefix $(OBJDIR)/, $(SRCS_CUSTOM:.c=.o))
+
+OBJDIR		= objects
 
 NAME		= libft.a
 
@@ -95,7 +95,7 @@ custom:			$(OBJS) $(OBJS_CUSTOM)
 				ar rcs $(NAME) $^
 
 $(OBJDIR):
-				mkdir $(OBJDIR)
+				mkdir $@
 
 $(OBJDIR)/%.o:	%.c
 				$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
@@ -110,4 +110,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re bonus custom
