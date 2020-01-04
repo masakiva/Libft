@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2020/01/03 20:14:09 by mvidal-a         ###   ########.fr        #
+#    Updated: 2020/01/04 16:50:51 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ SRCS_CUSTOM	+= ft_putlnbr_hex_fd.c
 SRCS_CUSTOM	+= ft_uitoa.c
 SRCS_CUSTOM	+= ft_uitoa_hex.c
 SRCS_CUSTOM	+= ft_ulitoa_hex.c
+SRCS_CUSTOM	+= ft_index.c
 
 VPATH		= part_1:part_2:bonus:custom
 

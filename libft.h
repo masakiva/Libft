@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:29:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2020/01/03 16:07:32 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/04 16:49:54 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void			ft_putlnbr_hex_fd(long n, char v, int fd);
 char			*ft_uitoa(unsigned un);
 char			*ft_uitoa_hex(unsigned un, char v);
 char			*ft_ulitoa_hex(unsigned long uln, char v);
+int				ft_index(char *haystack, char needle);
 
 #endif
