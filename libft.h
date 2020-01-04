@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:29:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2020/01/04 16:49:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/04 17:44:16 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 # define LIBFT_H
 
 # include <stddef.h>
+# include <stdint.h>
 
 typedef struct	s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+typedef	uint8_t	t_byte;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -75,5 +77,10 @@ char			*ft_uitoa(unsigned un);
 char			*ft_uitoa_hex(unsigned un, char v);
 char			*ft_ulitoa_hex(unsigned long uln, char v);
 int				ft_index(char *haystack, char needle);
+t_byte			read_bit(t_byte b, t_byte index);
+t_byte			turn_bit_on(t_byte b, t_byte index);
+t_byte			turn_bit_off(t_byte b, t_byte index);
+void   			print_8_bits(t_byte b);
+void			print_32_bits(uint32_t b);
 
 #endif

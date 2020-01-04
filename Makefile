@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2020/01/04 16:50:51 by mvidal-a         ###   ########.fr        #
+#    Updated: 2020/01/04 17:49:29 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,11 @@ SRCS_CUSTOM	+= ft_uitoa.c
 SRCS_CUSTOM	+= ft_uitoa_hex.c
 SRCS_CUSTOM	+= ft_ulitoa_hex.c
 SRCS_CUSTOM	+= ft_index.c
+SRCS_CUSTOM	+= print_32_bits.c
+SRCS_CUSTOM	+= print_8_bits.c
+SRCS_CUSTOM	+= read_bit.c
+SRCS_CUSTOM	+= turn_bit_off.c
+SRCS_CUSTOM	+= turn_bit_on.c
 
 VPATH		= part_1:part_2:bonus:custom
 
