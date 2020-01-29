@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:06:44 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/12/21 18:41:52 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:27:17 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long	i;
-	int				ret;
+	size_t	i;
+	int		ret;
 
 	i = 0;
 	ret = 0;

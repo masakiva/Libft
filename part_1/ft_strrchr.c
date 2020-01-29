@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 21:30:37 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/12/21 19:55:52 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:27:40 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned long	i;
-	char			*ret;
+	size_t	i;
+	char	*ret;
 
 	i = ft_strlen(s);
 	if (c == '\0')

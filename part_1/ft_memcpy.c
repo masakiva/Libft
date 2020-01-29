@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:18:39 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/12/21 18:17:35 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:21:34 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (dst != src)
 	{

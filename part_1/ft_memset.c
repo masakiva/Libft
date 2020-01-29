@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:19:55 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/12/21 15:46:08 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:22:55 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	while (i < len)

@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:30:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/12/21 19:28:31 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:26:58 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned long	i;
-	size_t			srclen;
+	size_t	i;
+	size_t	srclen;
 
 	srclen = ft_strlen(src);
 	if (dstsize != 0)

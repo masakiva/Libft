@@ -6,44 +6,36 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 14:18:43 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/11 14:15:53 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/29 16:37:16 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static char	*strnstr_core(const char *hs, const char *ndl, size_t len, size_t i)
-{
-	int		j;
-	int		n;
-
-	n = 0;
-	while (hs[i] && i < len)
-	{
-		j = 0;
-		while (hs[i] != ndl[j] && hs[i] && i < len)
-			i++;
-		if (!hs[i])
-			break ;
-		if (hs[i] == ndl[j])
-			n = i;
-		while (hs[i] == ndl[j] && ndl[j] && i < len)
-		{
-			i++;
-			j++;
-		}
-		if (!ndl[j])
-			return ((char *)(hs + n));
-		else if (i == len)
-			break ;
-		i = n + 1;
-	}
-	return (NULL);
-}
+#include <stddef.h>
 
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (!needle[0])
+	size_t	i;
+	size_t	j;
+	size_t	k;
+
+	if (needle[0] == '\0' || (len > 0 && haystack == needle))
 		return ((char *)haystack);
-	return (strnstr_core(haystack, needle, len, 0));
+	i = 0;
+	while (i < len && haystack[i] != '\0')
+	{
+		if (haystack[i] == needle[0])
+		{
+			j = i + 1;
+			k = 1;
+			while (j < len && haystack[j] == needle[k])
+			{
+				k++;
+				if (needle[k] == '\0')
+					return ((char *)(haystack + i));
+				j++;
+			}
+		}
+		i++;
+	}
+	return (NULL);
 }
