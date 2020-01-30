@@ -6,14 +6,13 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:12:53 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/28 18:25:15 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/30 12:21:01 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void
-	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;
 

@@ -6,16 +6,14 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2020/01/08 17:46:29 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/30 12:43:44 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void
-	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (s != NULL)
-		write(fd, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }

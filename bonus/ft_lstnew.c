@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:29:42 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/30 15:18:54 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/30 12:18:31 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_elem;
+	t_list	*new;
 
-	new_elem = (t_list *)malloc(sizeof(t_list));
-	if (new_elem != NULL)
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new != NULL)
 	{
-		new_elem->content = content;
-		new_elem->next = NULL;
+		new->content = content;
+		new->next = NULL;
 	}
-	return (new_elem);
+	return (new);
 }

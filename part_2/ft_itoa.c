@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 12:58:23 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/30 12:46:44 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/01/30 12:28:52 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	n_len(int n)
 
 char			*ft_itoa(int n)
 {
-	char		*nstr;
+	char		*a;
 	unsigned	un;
 	size_t		len;
 
@@ -44,19 +44,19 @@ char			*ft_itoa(int n)
 		un = (unsigned)(n * -1);
 	else
 		un = (unsigned)n;
-	nstr = (char *)malloc(sizeof(char) * (len + 1));
-	if (nstr != NULL)
+	a = (char *)malloc(sizeof(char) * (len + 1));
+	if (a != NULL)
 	{
-		nstr[len--] = '\0';
+		a[len--] = '\0';
 		if (n < 0)
-			nstr[0] = '-';
+			a[0] = '-';
 		else if (n == 0)
-			nstr[0] = '0';
+			a[0] = '0';
 		while (un > 0)
 		{
-			nstr[len--] = (char)(un % 10 + '0');
+			a[len--] = (char)(un % 10 + '0');
 			un /= 10;
 		}
 	}
-	return (nstr);
+	return (a);
 }
