@@ -6,61 +6,71 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 16:40:30 by mvidal-a          #+#    #+#             */
-/*   Updated: 2019/11/29 17:00:58 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/02/01 18:26:04 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	trim_count(const char *s1, const char *set, int s1len, int inc_dec)
+static uint8_t	isinset(char const c, char const *set)
 {
-	int		i;
-	int		j;
+	while (*set != '\0')
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
+
+static size_t	trim_start(char const *s1, char const *set)
+{
+	size_t	i;
 
 	i = 0;
-	if (!set)
-		return (0);
-	while (i < s1len)
+	while (s1[i] != '\0')
 	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[inc_dec ? i : s1len - i - 1] == set[j])
-				break ;
-			j++;
-		}
-		if (!set[j])
+		if (isinset(s1[i], set) == 0)
 			break ;
 		i++;
 	}
 	return (i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+static size_t	trim_end(char const *s1, char const *set, size_t i)
 {
-	int		len;
-	int		trim_end;
-	int		trim_start;
-	char	*s2;
-	int		i;
-
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	i = 0;
-	if (len - (trim_end = trim_count(s1, set, len, 0)))
+	while (i > 0)
 	{
-		trim_start = trim_count(s1, set, len - trim_end, 1);
-		len -= trim_start + trim_end;
-		if (!(s2 = (char *)malloc(sizeof(*s2) * (len + 1))))
-			return (NULL);
 		i--;
-		while (++i < len)
-			s2[i] = s1[trim_start + i];
+		if (isinset(s1[i], set) == 0)
+			break ;
 	}
-	else if (!(s2 = (char *)malloc(sizeof(*s2) * 1)))
-		return (NULL);
-	s2[i] = 0;
-	return (s2);
+	return (i + 1);
+}
+
+char			*ft_strtrim(char const *s1, char const *set)
+{
+	char	*res;
+	size_t	len;
+	size_t	i;
+	size_t	j;
+
+	len = ft_strlen(s1);
+	i = trim_start(s1, set);
+	if (i != len)
+		len = trim_end(s1, set, len);
+	res = (char *)malloc(sizeof(char) * ((len - i) + 1));
+	if (res != NULL)
+	{
+		j = 0;
+		while (i < len)
+		{
+			res[j] = s1[i];
+			j++;
+			i++;
+		}
+		res[j] = '\0';
+	}
+	return (res);
 }
