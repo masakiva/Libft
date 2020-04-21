@@ -66,6 +66,7 @@ SRCS_CUSTOM	+= print_8_bits.c
 SRCS_CUSTOM	+= read_bit.c
 SRCS_CUSTOM	+= turn_bit_off.c
 SRCS_CUSTOM	+= turn_bit_on.c
+SRCS_CUSTOM	+= get_next_line.c
 
 VPATH		= part_1:part_2:bonus:custom
 

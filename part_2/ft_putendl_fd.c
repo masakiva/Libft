@@ -11,9 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putendl_fd(char *s, int fd)
+// return value: nonnegative on success (nb of chars written without the nl) and -1 + errno set on error
+ssize_t	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	ssize_t	ret;
+	
+	ret = ft_putstr_fd(s, fd);
+	if (ret != -1)
+	{
+		if (ft_putchar_fd('\n', fd) == -1)
+			ret = -1;
+	}
+	return (ret);
 }

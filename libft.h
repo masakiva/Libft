@@ -15,6 +15,9 @@
 
 # include <stddef.h>
 # include <stdint.h>
+# include <sys/types.h>
+
+#define ERROR	-1
 
 typedef struct	s_list
 {
@@ -55,10 +58,10 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+ssize_t			ft_putchar_fd(char c, int fd);
+ssize_t			ft_putstr_fd(char *s, int fd);
+ssize_t			ft_putendl_fd(char *s, int fd);
+ssize_t			ft_putnbr_fd(int n, int fd);
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
@@ -82,5 +85,6 @@ t_byte			turn_bit_on(t_byte b, t_byte index);
 t_byte			turn_bit_off(t_byte b, t_byte index);
 void   			print_8_bits(t_byte b);
 void			print_32_bits(uint32_t b);
+int         	get_next_line(int fd, char **line);
 
 #endif

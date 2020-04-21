@@ -13,7 +13,8 @@
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+// return value: nonnegative on success (nb of chars written) and -1 + errno set on error
+ssize_t	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	return (write(fd, s, ft_strlen(s)));
 }

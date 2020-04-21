@@ -10,24 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+// à changer (en non-récursif?) pour pouvoir renvoyer le nb de caractères écrits
+ssize_t	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;
 
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		if (ft_putstr_fd("-2147483648", fd) == 11)
+			return (1);
+		else
+			return (-1);
 	}
 	else if (n < 0)
 	{
-		write(fd, "-", 1);
+		if (ft_putchar_fd('-', fd) != 1)
+			return (-1);
 		n *= -1;
 	}
 	if (n > 9)
-		ft_putnbr_fd(n / 10, fd);
+	{
+		if (ft_putnbr_fd(n / 10, fd) != 1)
+			return (-1);
+	}
 	digit = n % 10 + '0';
-	write(fd, &digit, 1);
+	return (ft_putchar_fd(digit, fd));
+}
+
+int		main(void)
+{
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
+	return (0);
 }
