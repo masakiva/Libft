@@ -40,9 +40,9 @@ ssize_t	ft_putnbr_fd(int n, int fd)
 	return (ft_putchar_fd(digit, fd));
 }
 
-int		main(void)
-{
-	ft_putnbr_fd(-2147483648, 1);
-	ft_putchar_fd('\n', 1);
-	return (0);
-}
+//int		main(void)
+//{
+//	ft_putnbr_fd(-2147483648, 1);
+//	ft_putchar_fd('\n', 1);
+//	return (0);
+//}
