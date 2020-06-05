@@ -12,7 +12,7 @@
 
 #include "libft.h"
 // return value: nonnegative on success (nb of chars written without the nl) and -1 + errno set on error
-ssize_t	ft_putendl_fd(char *s, int fd)
+ssize_t	ft_putendl_fd(const char *s, int fd)
 {
 	ssize_t	ret;
 	

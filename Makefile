@@ -96,11 +96,11 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				ar rcs $@ $^
 
-bonus:			$(OBJS) $(OBJS_BONUS)
-				ar rcs $(NAME) $^
+bonus:			$(NAME) $(OBJS_BONUS)
+				ar rcs $(NAME) $(OBJS_BONUS)
 
-custom:			$(OBJS) $(OBJS_CUSTOM)
-				ar rcs $(NAME) $^
+custom:			$(NAME) $(OBJS_CUSTOM)
+				ar rcs $(NAME) $(OBJS_CUSTOM)
 
 $(OBJDIR):
 				mkdir $@
@@ -109,6 +109,10 @@ $(OBJDIR)/%.o:	%.c
 				$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
 $(OBJS):		$(HEADER) | $(OBJDIR)
+
+$(OBJS_BONUS):	$(HEADER)
+
+$(OBJS_CUSTOM):	$(HEADER)
 
 clean:
 				$(RM) -r $(OBJDIR)
