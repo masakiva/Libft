@@ -6,7 +6,7 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:29:06 by mvidal-a          #+#    #+#             */
-/*   Updated: 2020/01/08 20:31:28 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2020/10/17 23:45:54 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ t_byte			turn_bit_off(t_byte b, t_byte index);
 void   			print_8_bits(t_byte b);
 void			print_32_bits(uint32_t b);
 int         	get_next_line(int fd, char **line);
+int				ft_isspace(int c);
 
 #endif

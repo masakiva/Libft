@@ -6,7 +6,7 @@
 #    By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/23 13:17:34 by mvidal-a          #+#    #+#              #
-#    Updated: 2020/02/01 14:29:38 by mvidal-a         ###   ########.fr        #
+#    Updated: 2020/10/17 23:45:26 by mvidal-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS_CUSTOM	+= read_bit.c
 SRCS_CUSTOM	+= turn_bit_off.c
 SRCS_CUSTOM	+= turn_bit_on.c
 SRCS_CUSTOM	+= get_next_line.c
+SRCS_CUSTOM	+= ft_isspace.c
 
 VPATH		= part_1:part_2:bonus:custom
 
