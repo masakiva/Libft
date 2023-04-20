@@ -1,7 +1,7 @@
 # Libft
 
-Libft stands for "42 (**f**orty-**t**wo) library", it is the first project I made in 42 school.
-This library is written in C and contains implementations of common data structures and algorithms.
+Libft stands for "42 (**f**orty-**t**wo) library", it is the first project I made in 42 school.  
+This library is written in C and contains implementations of common data structures and algorithms.  
 Here is an overview of the different parts:
 - `part_1`: copies of functions of the standard C library, mostly for string manipulation.
 - `part_2`: functions not included in the standard C library, here mostly about string manipulation, using `malloc()` and `write()`.
