@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   skip_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:59 by mvidal-a         ###   ########.fr       */
+/*   Created: 2022/11/08 14:50:10 by mvidal-a          #+#    #+#             */
+/*   Updated: 2022/11/08 14:53:53 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-t_bool		ft_putstr_fd(const char *s, int fd)
+char*	skip_int(char* str)
 {
-	size_t	len;
-	ssize_t	ret;
-
-	len = ft_strlen(s);
-	ret = write(fd, s, len);
-	if (ret != (ssize_t)len)
-		return (FAILURE);
-	return (SUCCESS);
+	str = skip_spaces(str);
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+		str++;
+	return (str);
 }
+

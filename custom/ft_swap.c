@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:59 by mvidal-a         ###   ########.fr       */
+/*   Created: 2020/12/22 17:17:26 by mvidal-a          #+#    #+#             */
+/*   Updated: 2020/12/22 17:20:19 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
-
-t_bool		ft_putstr_fd(const char *s, int fd)
+void	ft_swap(void **a, void **b)
 {
-	size_t	len;
-	ssize_t	ret;
+	void	*c;
 
-	len = ft_strlen(s);
-	ret = write(fd, s, len);
-	if (ret != (ssize_t)len)
-		return (FAILURE);
-	return (SUCCESS);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

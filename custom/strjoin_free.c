@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   strjoin_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mvidal-a <mvidal-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:59 by mvidal-a         ###   ########.fr       */
+/*   Created: 2021/01/09 18:31:27 by mvidal-a          #+#    #+#             */
+/*   Updated: 2021/01/10 00:34:08 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
-#include <unistd.h>
 
-t_bool		ft_putstr_fd(const char *s, int fd)
+char	*strjoin_free(char *s1, char const *s2)
 {
-	size_t	len;
-	ssize_t	ret;
+	char	*join;
 
-	len = ft_strlen(s);
-	ret = write(fd, s, len);
-	if (ret != (ssize_t)len)
-		return (FAILURE);
-	return (SUCCESS);
+	join = ft_strjoin(s1, s2);
+	free(s1);
+	return (join);
 }

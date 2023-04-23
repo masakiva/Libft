@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:59 by mvidal-a         ###   ########.fr       */
+/*   Created: 2020/10/19 13:38:48 by abenoit           #+#    #+#             */
+/*   Updated: 2020/12/26 00:02:16 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#include <stddef.h>
 
-t_bool		ft_putstr_fd(const char *s, int fd)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	len;
-	ssize_t	ret;
+	size_t	i;
 
-	len = ft_strlen(s);
-	ret = write(fd, s, len);
-	if (ret != (ssize_t)len)
-		return (FAILURE);
-	return (SUCCESS);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	{
+		i++;
+	}
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

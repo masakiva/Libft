@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isset.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: abenoit <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 18:06:07 by mvidal-a          #+#    #+#             */
-/*   Updated: 2022/11/13 18:23:59 by mvidal-a         ###   ########.fr       */
+/*   Created: 2020/10/19 13:40:47 by abenoit           #+#    #+#             */
+/*   Updated: 2020/12/26 00:25:58 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-t_bool		ft_putstr_fd(const char *s, int fd)
+int		ft_isset(char c, char *set)
 {
-	size_t	len;
-	ssize_t	ret;
-
-	len = ft_strlen(s);
-	ret = write(fd, s, len);
-	if (ret != (ssize_t)len)
-		return (FAILURE);
-	return (SUCCESS);
+	while (*set != '\0')
+	{
+		if (c == *set)
+			return (TRUE);
+		set++;
+	}
+	return (FALSE);
 }

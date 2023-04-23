@@ -19,6 +19,14 @@
 
 # define ERROR	-1
 
+# define TRUE	1
+# define FALSE	0
+
+# define SUCCESS	1
+# define FAILURE	0
+
+# define NOT_FOUND	-1
+
 typedef struct	s_list
 {
 	void			*content;
@@ -26,6 +34,11 @@ typedef struct	s_list
 }				t_list;
 
 typedef	uint8_t	t_byte;
+typedef	uint8_t	t_bool;
+
+/*
+**	part 1
+*/
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -53,16 +66,24 @@ int				ft_atoi(const char *str);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
 
+/*
+**	part 2
+*/
+
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-ssize_t			ft_putchar_fd(char c, int fd);
-ssize_t			ft_putstr_fd(const char *s, int fd);
-ssize_t			ft_putendl_fd(const char *s, int fd);
-ssize_t			ft_putnbr_fd(int n, int fd);
+t_bool			ft_putchar_fd(char c, int fd);
+t_bool			ft_putstr_fd(const char *s, int fd);
+t_bool			ft_putendl_fd(const char *s, int fd);
+t_bool			ft_putnbr_fd(int n, int fd);
+
+/*
+**	bonus (chained list management)
+*/
 
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new);
@@ -75,18 +96,61 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 		void (*del)(void *));
 
-void			ft_putlnbr_fd(long n, int fd);
-void			ft_putlnbr_hex_fd(long n, char v, int fd);
-char			*ft_uitoa(unsigned un);
-char			*ft_uitoa_hex(unsigned un, char v);
-char			*ft_ulitoa_hex(unsigned long uln, char v);
+/*
+**	custom functions
+*/
+
+ssize_t			get_next_line(int fd, char **line);
 ssize_t			ft_index(char *haystack, char needle);
+void			ft_swap(void **a, void **b);
+
 t_byte			read_bit(t_byte b, t_byte index);
 t_byte			turn_bit_on(t_byte b, t_byte index);
 t_byte			turn_bit_off(t_byte b, t_byte index);
 void			print_8_bits(t_byte b);
 void			print_32_bits(uint32_t b);
-int				get_next_line(int fd, char **line);
+
 int				ft_isspace(int c);
+char*			skip_spaces(char* str);
+char*			skip_int(char* str);
+char*			skip_float(char* str);
+int				blank_str(char *line);
+int				ft_isset(char c, char *set);
+int				ft_strcmp(const char *s1, const char *s2);
+int				ft_isnumber(const char* str);
+long			ft_atol(const char* str);
+int8_t			ft_atoi_sign(const char* str, int* nb);
+double			ft_atof(const char* str);
+char			*ft_uitoa(unsigned un);
+char			*ft_uitoa_hex(unsigned un, char v);
+char			*ft_ulitoa_hex(unsigned long uln, char v);
+t_bool			ft_isint(char* str);
+void			ft_putlnbr_fd(long n, int fd);
+void			ft_putlnbr_hex_fd(long n, char v, int fd);
+
+char			*strjoin_free(char *s1, char const *s2);
+
+void			*ft_lstshift(t_list **lst);
+
+size_t			ft_varnamelen(char *str);
+char			*get_var_value(char **vars, char *name, size_t name_len);
+ssize_t			get_var_pos(char **vars, char *name, size_t name_len);
+
+int				ft_printarray_fd(char **array, int fd);
+size_t			ft_arraylen(char **array);
+void			free_str_array(char **array);
+char			**dup_str_array(char **array);
+char			**push_str_to_array(char **array, char *str);
+char			**rm_str_from_array(char **array, size_t str_pos);
+void			sort_str_array(char **array);
+
+int				*push_int_to_array(int *array, size_t array_size, int nb);
+
+int				ft_set_index(char c, char *set);
+
+double			ft_pow(double nb, int power);
+int				ft_sqrt(int nb);
+long			ft_sqrt_long(long nb);
+double			ft_sqrt_double(double nb);
 
 #endif

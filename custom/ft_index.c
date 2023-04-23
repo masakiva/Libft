@@ -6,13 +6,13 @@
 /*   By: mvidal-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/04 16:29:52 by mvidal-a          #+#    #+#             */
-/*   Updated: 2020/01/04 16:30:05 by mvidal-a         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:15:12 by mvidal-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
+#include "libft.h"
 
-ssize_t	ft_index(char *haystack, char needle)
+ssize_t		ft_index(char *haystack, char needle)
 {
 	ssize_t	i;
 
@@ -20,6 +20,6 @@ ssize_t	ft_index(char *haystack, char needle)
 	while (haystack[i] != '\0' && haystack[i] != needle)
 		i++;
 	if (haystack[i] != needle)
-		i = -1;
+		i = NOT_FOUND;
 	return (i);
 }
