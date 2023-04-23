@@ -1,8 +1,22 @@
-a.out*
-main_*
-.DS_Store
+# binary stuff
 *.o
 objects
-libft.a
+*.a
+*.out
+a.out*
+
+# macos garbage
+.DS_Store
+
+# vscode
+.vscode
+
+# vim
 *.swp
+*.vim
+
+# ctags
 tags
+
+# debug
+.gdb_history
