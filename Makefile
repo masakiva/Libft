@@ -129,9 +129,11 @@ $(NAME):		$(OBJS)
 
 bonus:			$(NAME) $(OBJS_BONUS)
 				ar rcs $(NAME) $(OBJS_BONUS)
+				touch bonus
 
 custom:			$(NAME) $(OBJS_CUSTOM)
 				ar rcs $(NAME) $(OBJS_CUSTOM)
+				touch custom
 
 $(OBJDIR):
 				mkdir $@
@@ -139,11 +141,11 @@ $(OBJDIR):
 $(OBJDIR)/%.o:	%.c
 				$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
-$(OBJS):		$(HEADER) | $(OBJDIR)
+$(OBJS):		Makefile $(HEADER) | $(OBJDIR)
 
-$(OBJS_BONUS):	$(HEADER)
+$(OBJS_BONUS):	Makefile $(HEADER)
 
-$(OBJS_CUSTOM):	$(HEADER)
+$(OBJS_CUSTOM):	Makefile $(HEADER)
 
 clean:
 				$(RM) -r $(OBJDIR)
@@ -153,4 +155,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re bonus custom
+.PHONY:			all clean fclean re
